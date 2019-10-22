@@ -1,0 +1,13 @@
+# Patches applied:
+- attachside
+- autostart
+- bottomstack
+- center
+- combo
+- cyclelayout
+- gaplessgrid
+- horizgrid
+- movestack
+- pertag
+- scratchpad
+- setmfact
