@@ -89,8 +89,6 @@ static const char *audiopause[] = { "cmus-remote", "-u", NULL };
 static const char *audioback[]  = { "cmus-remote", "-r", NULL };
 static const char *audionext[]  = { "cmus-remote", "-n", NULL };
 
-static const int numpad = 1;
-
 static Key keys[] = {
     /* modifier                      key   function        argument */
 
@@ -138,15 +136,27 @@ static Key keys[] = {
 
     { 0,                  XF86XK_Launch1,  spawn,          {.v = lockcmd } },
 
-    TAGKEYS(numpad ? XK_1 : XK_ampersand,    0)
-    TAGKEYS(numpad ? XK_2 : XK_bracketleft,  1)
-    TAGKEYS(numpad ? XK_3 : XK_braceleft,    2)
-    TAGKEYS(numpad ? XK_4 : XK_braceright,   3)
-    TAGKEYS(numpad ? XK_5 : XK_parenleft,    4)
-    TAGKEYS(numpad ? XK_6 : XK_equal,        5)
-    TAGKEYS(numpad ? XK_7 : XK_asterisk,     6)
-    TAGKEYS(numpad ? XK_8 : XK_parenright,   7)
-    TAGKEYS(numpad ? XK_9 : XK_plus,         8)
+#if defined(noergodox)
+    TAGKEYS(XK_ampersand,   0)
+    TAGKEYS(XK_bracketleft, 1)
+    TAGKEYS(XK_braceleft,   2)
+    TAGKEYS(XK_braceright,  3)
+    TAGKEYS(XK_parenleft,   4)
+    TAGKEYS(XK_equal,       5)
+    TAGKEYS(XK_asterisk,    6)
+    TAGKEYS(XK_parenright,  7)
+    TAGKEYS(XK_plus,        8)
+#else
+    TAGKEYS(XK_1, 0)
+    TAGKEYS(XK_2, 1)
+    TAGKEYS(XK_3, 2)
+    TAGKEYS(XK_4, 3)
+    TAGKEYS(XK_5, 4)
+    TAGKEYS(XK_6, 5)
+    TAGKEYS(XK_7, 6)
+    TAGKEYS(XK_8, 7)
+    TAGKEYS(XK_9, 8)
+#endif
 
 };
 
